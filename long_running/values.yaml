@@ -1,0 +1,13 @@
+metadata:
+  name: aa
+  namespace: default
+
+image:
+  repository: ghcr.io/knative/helloworld-go
+  tag: latest
+
+env:
+  - name: TARGET
+    value: "Go Sample v1"
+  - name: ENV_LOCAL_PORT
+    value: "8080"

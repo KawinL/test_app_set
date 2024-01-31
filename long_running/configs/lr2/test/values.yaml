@@ -1,0 +1,13 @@
+metadata:
+  name: s2test
+  namespace: default
+
+image:
+  repository: ghcr.io/knative/helloworld-go
+  tag: latest
+
+env:
+  - name: TARGET
+    value: "service2 test"
+  - name: ENV_LOCAL_PORT
+    value: "8080"

@@ -10,7 +10,7 @@ spec:
         revision: main
         directories:
           # here it will read the paths under configs and the subpaths under the config paths
-          - path: services/configs/*/*
+          - path: long_running/configs/*/*
   template:
     metadata:
       namespace: argocd
@@ -24,7 +24,7 @@ spec:
           valueFiles:
             - "values.yaml"
             - "configs/{{path[2]}}/{{path.basename}}/values.yaml"
-        path: services
+        path: long_running
         repoURL: https://github.com/KawinL/test_app_set.git
         targetRevision: main
       syncPolicy:

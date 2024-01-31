@@ -1,0 +1,13 @@
+metadata:
+  name: s2stg
+  namespace: default
+
+image:
+  repository: ghcr.io/knative/helloworld-go
+  tag: latest
+
+env:
+  - name: TARGET
+    value: "s2 staging"
+  - name: ENV_LOCAL_PORT
+    value: "8080"
