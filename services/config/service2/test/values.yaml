@@ -1,0 +1,13 @@
+metadata:
+  name: 
+  namespace: default
+
+image:
+  repository: ghcr.io/knative/helloworld-go
+  tag: latest
+
+env:
+  - name: TARGET
+    value: "service2 test"
+  - name: PORT
+    value: "8080"
