@@ -1,0 +1,17 @@
+metadata:
+  name: staing-cron1
+
+spec:
+  schedule: "*/1 * * * *"
+  container:
+    name: hello
+    image: busybox:1.28
+    imagePullPolicy: IfNotPresent
+    command:
+      - /bin/sh
+      - -c
+      - date; echo Hello from cron1 staging
+  resources:
+    requests:
+      memory: 120Mi
+      cpu: 120m

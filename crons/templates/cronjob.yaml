@@ -1,0 +1,26 @@
+apiVersion: batch/v1
+kind: CronJob
+metadata:
+  name: {{ .Release.Name }}-cronjob
+spec:
+  schedule: "{{ .Values.spec.schedule }}"
+  concurrencyPolicy: {{ .Values.spec.concurrencyPolicy }}
+  jobTemplate:
+    spec:
+      template:
+        spec:
+          activeDeadlineSeconds: {{ .Values.spec.activeDeadlineSeconds }}
+          restartPolicy: {{ .Values.spec.restartPolicy }}
+          containers:
+          - name: {{ .Values.spec.container.name }}
+            image: {{ .Values.spec.container.image }}
+            imagePullPolicy: {{ .Values.spec.container.imagePullPolicy }}
+            command: {{ toJson .Values.spec.container.command }}
+            resources:
+                requests:
+                    memory: {{ .Values.spec.resources.requests.memory }}
+                    cpu: {{ .Values.spec.resources.requests.cpu }}
+                limits:
+                    memory: {{ .Values.spec.resources.limits.memory }}
+                    cpu: {{ .Values.spec.resources.limits.cpu }}
+        

@@ -1,0 +1,23 @@
+metadata:
+  name: default-cron
+
+spec:
+  schedule: "*/2 * * * *"
+  container:
+    name: hello
+    image: busybox:1.28
+    imagePullPolicy: IfNotPresent
+    command:
+      - /bin/sh
+      - -c
+      - date; echo Hello from the Kubernetes cluster
+  restartPolicy: OnFailure
+  activeDeadlineSeconds: 60
+  concurrencyPolicy: Forbid
+  resources:
+    requests:
+      memory: 100Mi
+      cpu: 100m
+    limits:
+      memory: 100Mi
+      cpu: 100m
