@@ -9,5 +9,5 @@ image:
 env:
   - name: TARGET
     value: "s1 test"
-  - name: PORT
+  - name: ENV_LOCAL_PORT
     value: "8080"

@@ -7,9 +7,9 @@ spec:
   template:
     spec:
       containers:
-        image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
-        {{- with .Values.env }}
-        env:
-          {{- toYaml . | nindent 8 }}
-        {{- end -}}
+        - image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+          {{- with .Values.env }}
+          env:
+            {{- toYaml . | nindent 10 }}
+          {{- end -}}
           
