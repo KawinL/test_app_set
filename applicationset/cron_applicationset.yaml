@@ -23,7 +23,7 @@ spec:
           # specify different values file based on directories variables
           valueFiles:
             - "configs/{{path[2]}}/{{path.basename}}/values.yaml"
-            - "configs/{{path[2]}}/values.yaml"
+            - "values.yaml"
         path: crons
         repoURL: https://github.com/KawinL/test_app_set.git
         targetRevision: main
