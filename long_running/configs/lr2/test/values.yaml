@@ -1,5 +1,5 @@
 metadata:
-  name: s2test
+  name: lr2test
   namespace: default
 
 image:
